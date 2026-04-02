@@ -1,0 +1,160 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: none;
+}
+
+:root {
+  --bg-primary:      #F7F5F2;
+  --bg-secondary:    #FFFFFF;
+  --bg-accent:       #FFF9F5;
+  --text-primary:    #111111;
+  --text-secondary:  #5A5A5A;
+  --text-tertiary:   #9A9A9A;
+  --accent-primary:  #111111;
+  --accent-orange:   #E85D04;
+  --accent-green:    #16A34A;
+  --accent-red:      #DC2626;
+  --accent-teal:     #0D9488;
+  --accent-purple:   #7C3AED;
+  --accent-blue:     #2563EB;
+  --border:          #ECEAE6;
+  --border-strong:   #D4D0CA;
+  --shadow-xs:       0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm:       0 1px 4px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md:       0 4px 16px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-lg:       0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-xl:       0 20px 60px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.06);
+  --font: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: #1A1108;
+  color: var(--text-primary);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(232,93,4,0.12) 0%, transparent 70%),
+              radial-gradient(ellipse 60% 60% at 50% 110%, rgba(13,148,136,0.08) 0%, transparent 70%),
+              #1A1108;
+}
+
+::-webkit-scrollbar { width: 0; height: 0; }
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  font-family: var(--font);
+  outline: none;
+  border: none;
+}
+
+input::placeholder { color: var(--text-tertiary); }
+
+/* ─── Tabular numbers for financial data ─── */
+.num {
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ─── Pressable ─── */
+.pressable {
+  transition: opacity 0.12s ease, transform 0.12s ease !important;
+}
+.pressable:active {
+  opacity: 0.62 !important;
+  transform: scale(0.97) !important;
+}
+
+/* ─── Row hover ─── */
+.row-hover { transition: background 0.15s ease; }
+.row-hover:hover { background: var(--bg-primary) !important; }
+
+/* ─── Stagger helpers ─── */
+.stagger-1 { animation-delay: 0.05s !important; }
+.stagger-2 { animation-delay: 0.10s !important; }
+.stagger-3 { animation-delay: 0.15s !important; }
+.stagger-4 { animation-delay: 0.20s !important; }
+.stagger-5 { animation-delay: 0.25s !important; }
+
+/* ─── Keyframes ─── */
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.35; }
+  30%            { transform: translateY(-5px); opacity: 1; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUpStagger {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0.88); }
+  65%  { transform: scale(1.03); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scaleY(0); }
+  to   { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes barGrow {
+  from { height: 0; }
+}
+
+@keyframes numberCount {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes diPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50%       { transform: translateX(-50%) scale(1.01); }
+}

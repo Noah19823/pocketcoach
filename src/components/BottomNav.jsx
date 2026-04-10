@@ -15,7 +15,7 @@ export default function BottomNav({ activeTab, setActiveTab }) {
   const [pressedTab, setPressedTab] = useState(null)
 
   return (
-    <nav style={{
+    <nav className="bottom-nav" style={{
       height: '74px',
       background: 'rgba(247,245,242,0.94)',
       backdropFilter: 'blur(28px)',

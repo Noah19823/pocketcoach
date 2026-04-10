@@ -52,34 +52,34 @@ export default function App() {
 
   return (
     /* Outer wrapper for side buttons */
-    <div style={{ position: 'relative' }}>
+    <div className="phone-outer" style={{ position: 'relative' }}>
 
       {/* Left — volume / action buttons */}
-      <div style={{
+      <div className="phone-btn" style={{
         position: 'absolute', left: '-4px', top: '96px',
         width: '4px', height: '30px', background: '#2A2420',
         borderRadius: '4px 0 0 4px', boxShadow: '-1px 0 2px rgba(0,0,0,0.5)',
       }} />
-      <div style={{
+      <div className="phone-btn" style={{
         position: 'absolute', left: '-4px', top: '140px',
         width: '4px', height: '56px', background: '#2A2420',
         borderRadius: '4px 0 0 4px', boxShadow: '-1px 0 2px rgba(0,0,0,0.5)',
       }} />
-      <div style={{
+      <div className="phone-btn" style={{
         position: 'absolute', left: '-4px', top: '208px',
         width: '4px', height: '56px', background: '#2A2420',
         borderRadius: '4px 0 0 4px', boxShadow: '-1px 0 2px rgba(0,0,0,0.5)',
       }} />
 
       {/* Right — power button */}
-      <div style={{
+      <div className="phone-btn" style={{
         position: 'absolute', right: '-4px', top: '160px',
         width: '4px', height: '72px', background: '#2A2420',
         borderRadius: '0 4px 4px 0', boxShadow: '1px 0 2px rgba(0,0,0,0.5)',
       }} />
 
       {/* Phone frame */}
-      <div style={{
+      <div className="phone-frame" style={{
         width: '390px',
         height: '844px',
         background: 'var(--bg-primary)',
@@ -99,7 +99,7 @@ export default function App() {
       }}>
 
         {/* Dynamic Island */}
-        <div style={{
+        <div className="phone-di" style={{
           position: 'absolute',
           top: '12px',
           left: '50%',
@@ -123,7 +123,7 @@ export default function App() {
         </div>
 
         {/* Status bar */}
-        <div style={{
+        <div className="phone-status-bar" style={{
           height: '54px',
           display: 'flex',
           alignItems: 'center',
@@ -146,6 +146,7 @@ export default function App() {
         {/* Screen content */}
         <div
           key={activeTab}
+          className="phone-content"
           style={{
             flex: 1,
             overflowY: 'auto',

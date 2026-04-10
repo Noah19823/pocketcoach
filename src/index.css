@@ -158,3 +158,50 @@ input::placeholder { color: var(--text-tertiary); }
   0%, 100% { transform: translateX(-50%) scale(1); }
   50%       { transform: translateX(-50%) scale(1.01); }
 }
+
+/* ─── Mobile: hide phone frame, fill screen edge-to-edge ─── */
+@media (max-width: 430px) {
+  html, body {
+    background: var(--bg-primary);
+    height: 100%;
+  }
+
+  #root {
+    display: block;
+    background: var(--bg-primary);
+    height: 100%;
+  }
+
+  .phone-outer {
+    position: static !important;
+    height: 100%;
+  }
+
+  .phone-btn {
+    display: none !important;
+  }
+
+  .phone-frame {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .phone-di {
+    display: none !important;
+  }
+
+  .phone-status-bar {
+    display: none !important;
+  }
+
+  .phone-content {
+    padding-top: env(safe-area-inset-top, 16px) !important;
+  }
+
+  .bottom-nav {
+    padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+    height: calc(74px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}

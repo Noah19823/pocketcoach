@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { LogoMark } from '../components/Logo'
 
 const TODAY_IDX = 4
 const DAYS = ['M', 'T', 'W', 'T', 'F', 'Sa', 'Su']
@@ -222,6 +223,24 @@ export default function HomeScreen({ setActiveTab, unreadCount, onBellClick }) {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* ── Co-branding footer ── */}
+      <div style={{ padding: '14px 24px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <LogoMark size={22} />
+          <span style={{ fontSize: '11px', color: 'var(--text-tertiary)', fontWeight: 500 }}>
+            Powered by Horizon Credit Union
+          </span>
+        </div>
+        <button
+          className="pressable"
+          onClick={() => window.location.href = '/dashboard'}
+          style={{
+            fontSize: '11px', fontWeight: 600, color: 'var(--accent-teal)',
+            background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+          }}
+        >Admin Portal →</button>
       </div>
 
     </div>
